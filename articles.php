@@ -1,5 +1,6 @@
 
 <?php
+include 'dataOpt.php';
 
 class articles {
 
@@ -12,15 +13,14 @@ public	 $con;
 
 function __construct()
 {
-
 	$this->con = mysql_connect("$this->host","$this->adminUser","$this->adminPassword");
-
 	if(!$this->con)
 	{
         	die('could not connect:'. mysql_error());
 	}
 	else
 	{
+		echo("connect succeed </br>");
 		mysql_select_db($this->database, $this->con);
 	}
 }
@@ -97,22 +97,76 @@ function insertArticle()
 	}
 }
 
-function listArticles()
+function getArticles()
 {
 	$sql="SELECT * FROM Articles";
 
 	$result=mysql_query($sql, $this->con);
-
+/**
 	while($row=mysql_fetch_array($result))
 	{
 	echo $row['Title'];
 	echo "<br />";
 	}
+*/
+	return $result;
 }
 
+function listArticles(){
+	
+	$artList=$this->getArticles();
 
+	while($article=mysql_fetch_array($artList)){
+		#echo ("<a href=&quot;http://www.baidu.com&quot;>test</a>" );
+		#echo $article['Title'];
+		echo ("<a href=viewArticle.php?ArticleID=".$article['ID'].">".$article['Title']."</a>" ); 
+		echo "</br>";
+	}
+	
+}
 
 	
 }
+
+
+class article extends database {
+
+	public $Title;
+	public $Content;
+	public $Datetime;
+	function	getArticle($articleID){
+		
+		$sql="SELECT * FROM Articles WHERE ID=".$articleID;
+		
+		if($result=mysql_query($sql,$this->con)){
+			if($article=mysql_fetch_array($result)){
+				$this->Title=$article['Title'];
+				$this->Content=$article['Content'];
+				$this->Datetime=$article['Datetime'];
+				echo $this->Title;
+			}
+			else{
+				echo "Article result is empty";
+			}
+
+		}
+		else{
+			echo "Article not Found or Removed!";
+		}
+	}
+	
+	function viewArticle(){
+		
+		echo $this->Title;
+		echo $this->Content;
+		echo $this->Datetime;
+	}
+	
+	
+
+}
+
+
+
 
 ?>

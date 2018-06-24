@@ -8,17 +8,13 @@
 <body>
 <h2>文章</h2>
 <?php 
-	include('./articles.php');
+	
 
+	include('./articles.php');
 	$articles = new articles();
 	$articles->listArticles();
 
-
-
-
 ?>
-
-
 
 </body>
 
