@@ -11,6 +11,8 @@
 	
 
 	include('./articles.php');
+	
+	$page=$_GET['page'];
 	$articles = new articles();
 	$articles->listArticles();
 

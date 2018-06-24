@@ -114,7 +114,37 @@ function getArticles()
 
 function listArticles(){
 	
-	$artList=$this->getArticles();
+	
+	$sql="SELECT COUNT(*) FROM Articles";
+	$Result=mysql_query($sql,$this->con);
+	$row=mysql_fetch_array($Result);
+	$recordCount=$row[0];
+	
+	#$artList=$this->getArticles();
+
+	if($page==0)
+	{
+		$page=1;
+	}
+	$pageSize=6;
+	$row=$artList->fetch_row();
+	echo $row;
+	$recordCount=$row[0];
+	if($recordCount){
+		if($recordCount<$pageSize){
+			$pageCount=1;
+		}
+		if($recordCount%$pageSize){
+			$pageCount=$recordCount%$pageSize+1;
+		}
+		else{
+			$pageCount=$recordCount%$pageSize;
+		}
+	}
+	else{
+		$pageCount=0;
+	}
+	
 
 	while($article=mysql_fetch_array($artList)){
 		#echo ("<a href=&quot;http://www.baidu.com&quot;>test</a>" );
