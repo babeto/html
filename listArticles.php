@@ -9,13 +9,13 @@
 <h2>文章</h2>
 <?php 
 	
-
+	
 	include('./articles.php');
 	
-	$page=$_GET['page'];
+	$page=$_GET['Page'];
 	$articles = new articles();
-	$articles->listArticles();
-
+	$articles->listArticles($page);
+	
 ?>
 
 </body>

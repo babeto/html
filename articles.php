@@ -112,7 +112,7 @@ function getArticles()
 	return $result;
 }
 
-function listArticles(){
+function listArticles($page){
 	
 	
 	$sql="SELECT COUNT(*) FROM Articles";
@@ -127,9 +127,9 @@ function listArticles(){
 		$page=1;
 	}
 	$pageSize=6;
-	$row=$artList->fetch_row();
-	echo $row;
-	$recordCount=$row[0];
+	#$row=$artList->fetch_row();
+	#echo $row;
+	#$recordCount=$row[0];
 	if($recordCount){
 		if($recordCount<$pageSize){
 			$pageCount=1;
@@ -145,13 +145,35 @@ function listArticles(){
 		$pageCount=0;
 	}
 	
-
+	$sql="SELECT * FROM Articles LIMIT ".($page-1)*$pageSize.",".$pageSize;
+	
+	#echo $sql;
+	$artList=mysql_query($sql,$this->con);
+	
+	
 	while($article=mysql_fetch_array($artList)){
 		#echo ("<a href=&quot;http://www.baidu.com&quot;>test</a>" );
 		#echo $article['Title'];
 		echo ("<a href=viewArticle.php?ArticleID=".$article['ID'].">".$article['Title']."</a>" ); 
 		echo "</br>";
 	}
+	
+	if($page==1)
+		echo "首页 ";
+	else
+		echo "<a href=listArticles.php?Page=1>首页</a> ";
+	if($page==1)
+		echo "前页 ";
+	else
+		echo "<a href=listArticles.php?Page=".($page-1).">前页</a> ";
+	if($page==$pageCount)
+		echo "后页 ";
+	else
+		echo "<a href=listArticles.php?Page=".($page+1).">后页</a> ";
+	if($page==$pageCount)
+		echo "末页 ";
+	else
+		echo "<a href=listArticles.php?Page=".$pageCount.">末页</a> ";
 	
 }
 
