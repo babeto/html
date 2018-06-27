@@ -13,7 +13,7 @@
 登录/注册
 </h1>
 
-<form name="loginform" action="logsession.php" method="Post">
+<form name="loginform" action="admin/logSession.php" method="Post">
 	<table>
 	<tr>
 		<td>用户名</td>

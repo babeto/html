@@ -16,14 +16,12 @@ include ('articles.php');
 
 $articleID=$_GET['ArticleID'];
 
-echo "$articleID";
 
 $article = new article();
 
 
 $article->getArticle($articleID);
 
-echo "$articleID";
 
 $article->viewArticle();
 

@@ -13,7 +13,7 @@
 管理员登录
 </h1>
 
-<form name="loginform" action="logsession.php" method="Post">
+<form name="loginform" action="./logSession.php" method="Post">
 	<table>
 	<tr>
 		<td>用户名:</td>

@@ -83,7 +83,8 @@ function insertArticle()
 
 	$sql="INSERT INTO Articles (Title, Author, Content, Datetime)
 	VALUES
-	('凉州词','王之焕','黄河远上白云间，一片孤城万仞山。羌笛何须怨杨柳，春风不度玉门关。', '$now')";
+	('凉州词','王之焕','黄河远上白云间，一片孤城万仞山。
+	羌笛何须怨杨柳，春风不度玉门关。', '$now')";
 
 
 
@@ -150,30 +151,33 @@ function listArticles($page){
 	#echo $sql;
 	$artList=mysql_query($sql,$this->con);
 	
+	echo "<table>";
 	
 	while($article=mysql_fetch_array($artList)){
 		#echo ("<a href=&quot;http://www.baidu.com&quot;>test</a>" );
 		#echo $article['Title'];
-		echo ("<a href=viewArticle.php?ArticleID=".$article['ID'].">".$article['Title']."</a>" ); 
-		echo "</br>";
+		echo ("<tr><td><a href=viewArticle.php?ArticleID=".$article['ID'].">".$article['Title']."</a><td><tr>" ); 
 	}
+	echo "</table>";
 	
+	echo "<table>";
 	if($page==1)
-		echo "首页 ";
+		echo "<tr><td>首页 </td>";
 	else
-		echo "<a href=listArticles.php?Page=1>首页</a> ";
+		echo "<td><a href=listArticles.php?Page=1>首页</a> </td>";
 	if($page==1)
-		echo "前页 ";
+		echo "<td>前页 </td>";
 	else
-		echo "<a href=listArticles.php?Page=".($page-1).">前页</a> ";
+		echo "<td><a href=listArticles.php?Page=".($page-1).">前页</a> </td>";
 	if($page==$pageCount)
-		echo "后页 ";
+		echo "<td>后页 </td>";
 	else
-		echo "<a href=listArticles.php?Page=".($page+1).">后页</a> ";
+		echo "<td><a href=listArticles.php?Page=".($page+1).">后页</a> </td>";
 	if($page==$pageCount)
-		echo "末页 ";
+		echo "<td>末页 </td>";
 	else
-		echo "<a href=listArticles.php?Page=".$pageCount.">末页</a> ";
+		echo "<td><a href=listArticles.php?Page=".$pageCount.">末页</a> </td></tr>";
+	echo "</table>";
 	
 }
 
@@ -195,7 +199,6 @@ class article extends database {
 				$this->Title=$article['Title'];
 				$this->Content=$article['Content'];
 				$this->Datetime=$article['Datetime'];
-				echo $this->Title;
 			}
 			else{
 				echo "Article result is empty";
@@ -208,10 +211,11 @@ class article extends database {
 	}
 	
 	function viewArticle(){
-		
-		echo $this->Title;
-		echo $this->Content;
-		echo $this->Datetime;
+		echo "<table>";
+		echo "<tr><td>".$this->Title."</td></tr>";
+		echo "<tr><td>".$this->Content."</td></tr>";
+		echo "<tr><td>".$this->Datetime."</td></tr>";
+		echo "</table>";
 	}
 	
 	
