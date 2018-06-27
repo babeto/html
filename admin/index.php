@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+<?php include ('isAdmin.php'); ?>
 <html>
 <head>
 <title>网站管理</title>
 
 <link rel="stylesheet" type="text/css" href="../css/globalstyle.css"/>
-<?php include ('isUser.php'); ?>
 
 </head>
 

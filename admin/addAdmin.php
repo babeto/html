@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<title>管理员登录</title>
+<title>管理员添加</title>
 
 <link rel="stylesheet" type="text/css" href="../css/globalstyle.css"/>
 
@@ -11,10 +10,10 @@
 <body>
 
 <h1>
-管理员登录
+管理员添加
 </h1>
 
-<form name="loginform" action="./adminSession.php" method="Post">
+<form name="loginform" action="adminAddSession.php" method="Post">
 	<table>
 	<tr>
 		<td>用户名:</td>

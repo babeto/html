@@ -2,14 +2,15 @@
 
 session_start();
 $username=$_SESSION['UserName'];
-$password=$_SESSION['UserPass'];
+$userpass=$_SESSION['UserPass'];
+
 
 include ('../class/User.php');
 
 $user=new User();
 if($username<>""){
 	$user->setUserName($username);
-	$user->setPasswd($password);
+	$user->setPass($userpass);
 	if(!$user->HaveUser()){
 		header("Location:login.php");
 	}

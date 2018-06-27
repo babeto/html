@@ -1,6 +1,6 @@
 <?php
 
-include ('dataOpt.php');
+include ('../dataOpt.php');
 
 class User extends database {
 	Private $userName;
@@ -24,8 +24,8 @@ class User extends database {
 		$this->userName=$username;
 	}
 	
-	function setPasswd($password){
-		$this->userPass=$password;
+	function setPass($userpass){
+		$this->userPass=$userpass;
 	}
 	
 	function createUsersTable(){

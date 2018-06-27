@@ -47,31 +47,6 @@ function createDatabase()
 }
 
 
-function createArticleTable()
-{
-	
-	$sql = "CREATE TABLE Articles
-	(
-	 ID  int NOT NULL AUTO_INCREMENT,
-	 Title varchar(255) NOT NULL,
-	 Author varchar(255),
-	 Content  text,
-	 Datetime datetime,
-	 PRIMARY KEY(ID)
-	)";
-
-
-	if(mysql_query($sql,$this->con))
-	{
-	echo "table created";
-	}
-
-	else
-	{
-	echo "error creating table: ".mysql_error();
-	}
-
-}
 }
 
 ?>
