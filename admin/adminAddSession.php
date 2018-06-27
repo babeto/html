@@ -11,7 +11,6 @@ $_SESSION['AdminName']=$UID;
 $_SESSION['AdminPass']=$PSWD;
 
 $admin = new Admin();
-
 if($UID<>""){
 	if($admin->addAdmin($UID, $PSWD)){
 		header("Location:adminAddSucceed.php");
