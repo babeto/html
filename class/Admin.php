@@ -8,12 +8,18 @@ class Admin extends database {
 	function HaveAdmin(){
 			
 		$sql="SELECT COUNT(*) FROM Admins WHERE AdminName='".$this->adminName."' AND AdminPassword='".$this->adminPass."'";
-
+		echo $sql;
 		$result=mysql_query($sql,$this->con);
 		if($row=mysql_fetch_array($result)){
+				if($row[0]!=0){
+					echo "admin exists";
+					return true;					
+				}
+				else {
+					echo "admin not exists";
+					return false;
+				}
 				
-				return true;
-		
 		}
 		else{
 			echo "admin doesn't exist!";

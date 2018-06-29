@@ -2,8 +2,8 @@
 
 session_start();
 
-$UID=$_GET['txtUserName'];
-$PSWD=$_GET['txtUserPass'];
+$UID=$_POST['txtUserName'];
+$PSWD=$_POST['txtUserPass'];
 
 $_SESSION['AdminName']=$UID;
 $_SESSION['AdminPass']=$PSWD;

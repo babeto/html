@@ -14,7 +14,6 @@
 	
 	$page=$_GET['Page'];
 	$articles = new articles();
-	$articles->insertArticle();
 	$articles->listArticles($page);
 	
 ?>
