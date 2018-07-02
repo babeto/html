@@ -22,6 +22,10 @@
 <td><a href="../login.php" target="right">登录</a></td>
 </tr>
 
+<tr>
+<td><a href="./logout.php" target="_top">注销</a></td>
+</tr>
+
 
 </table>
 

@@ -9,17 +9,17 @@
 
 </head>
 
-<frameset rows="20%,80%">
-	<frame name="title" src="frame_title.php" scrolling="auto" frameborder="0">
+<frameset rows="10%,90%">
+	<frame name="title" src="frame_title.php" scrolling="auto" frameborder="1">
 
 
 	<frameset cols="20%,80%">
-		<frame name="contents" src="left.php" scrolling="auto" frameborder="0">
-		<frame name="right" src="../listArticles.php" scrolling="auto" frameborder="0">	
+		<frame name="contents" src="left.php" scrolling="auto" frameborder="1">
+		<frame name="right" src="../listArticles.php" scrolling="auto" frameborder="1">	
 
 		<noframes>
 		<body>
-	
+
 		<p>网页使用框架，但您的浏览器不支持框架、</p>
 		</body>
 		</noframes>

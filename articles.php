@@ -120,6 +120,7 @@ function listArticles($page){
 	$Result=mysql_query($sql,$this->con);
 	$row=mysql_fetch_array($Result);
 	$recordCount=$row[0];
+
 	
 	#$artList=$this->getArticles();
 
@@ -136,15 +137,16 @@ function listArticles($page){
 			$pageCount=1;
 		}
 		if($recordCount%$pageSize){
-			$pageCount=$recordCount%$pageSize+1;
+			$pageCount=(int)($recordCount/$pageSize)+1;
 		}
 		else{
-			$pageCount=$recordCount%$pageSize;
+			$pageCount=$recordCount/$pageSize;
 		}
 	}
 	else{
 		$pageCount=0;
 	}
+
 	
 	$sql="SELECT * FROM Articles LIMIT ".($page-1)*$pageSize.",".$pageSize;
 	

@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+
+
+
+
+
+h1 {
+	text-align:center; 
+	color:green; 
+	font-size:32px;
+}
+
+
+h2 {
+        text-align:center;
+        color:green;
+        font-size:24px;
+}
+
+
+p  {
+	font-family: "sans erif";
+}
+
+table {
+	margin: 1em auto; 
+}
+
+body {
+	background-color: #EBC79E;
+}
+
+div {
+	margin: 0 auto;
+}
+
+	p {
+		text-indent:5em;
+	}
+	
+	.text {
+		background-color:black;
+		color:white;
+		padding: 5px;
+		font-family: san-serif;
+	}
+	
+	.logBox {
+		width:356px;
+	}
+	
+	.logBox li {
+		list-style:none;
+		float:left;
+		width:200px;
+		height:32px;
+		/*border:1px solid #999;*/
+	}
+	.logBox li.liName{
+		width:80px;
+		height:32px;
+	}
+		
+	#header {
+		background-color:black;
+		color:white;
+		text-align:center;
+		padding:5px;
+	}
+	
+	#nav {
+		background-color:grey;
+		height:300px;
+		width:100px;
+		float:left;
+		padding:5px;
+	}
+	
+	#section {
+		width:350px;
+		float:left;
+		padding:10px;
+	}
+	
+	#footer {
+		background-color:black;
+		color:white;
+		clear:both;
+		text-align:center;
+		padding:5px;
+	}
+	
+	
+		
+		

@@ -4,7 +4,7 @@
 <head>
 <title>管理员登录</title>
 
-<link rel="stylesheet" type="text/css" href="../css/globalstyle.css"/>
+<link rel="stylesheet" type="text/css" href="../css/admin.css"/>
 
 </head>
 
@@ -14,32 +14,31 @@
 管理员登录
 </h1>
 
+<div class="logBox">
 <form name="loginform" action="./adminSession.php" method="Post">
-	<table>
-	<tr>
-		<td>用户名:</td>
-		<td><label>
-			<input name="txtUserName" type="text" id="txtUserName" value=""/>
-		</label></td>
-	</tr>
-	<tr>
-		<td>密码:</td>
-		<td><label>
-			<input name="txtUserPass" type="text" id="txtUserPass" value=""/>
-		</label></td>
-	</tr>
-	<tr>
-		<td>
-		</td>
-		<td><label>
-			<input name="submit" type="submit" id="submit" value="提交"/>
-		</label>
-		<label>	
+<ul>
+	<li class="liName">用户名:</li>
+	<li>
+		<input name="txtUserName" type="text" id="txtUserName" value=""/>
+	</li>
+
+	<li class="liName">密码:</li>
+	<li>
+		<input name="txtUserPass" type="text" id="txtUserPass" value=""/>
+	</li>
+	<li class="liName"></li>
+	<li>
+		<input name="submit" type="submit" id="submit" value="提交"/>
 		<input name="reset" type="reset" id="reset" value="重置"/>
-		</label></td>
-	</tr>
-	</table>
+	</li>
+
+</ul>
+
+
+
+
 </form>
+</div>
 
 
 </body>
