@@ -1,21 +1,14 @@
-
-
-h1 {
-	text-align:center; 
-	color:green; 
-	font-size:32px;
-}
-
+@CHARSET "UTF-8";
 
 h2 {
         text-align:center;
-        color:green;
         font-size:24px;
+        font-family: KaiTi;
 }
 
 
 p  {
-	font-family: "sans erif";
+	font-family: Georgia;
 }
 
 table {
@@ -23,10 +16,91 @@ table {
 }
 
 body {
-	background-color: #EBC79E;
+	/*background-color: #EBC79E;*/
+	background-color: #EEEEEE;
 }
 
-div {
-	margin: 0 auto;
-}
+	div {
+		margin: 0 auto;
+	}
 
+	p {
+		text-indent:5em;
+	}
+	
+	.text {
+		background-color:black;
+		color:white;
+		padding: 5px;
+		font-family: san-serif;
+	}
+	
+	.logBox {
+		width:360px;
+	}
+	
+	.logBox li {
+		list-style:none;
+		float:left;
+		height:36px;
+		line-height:36px;
+		text-align:center;
+		border:1px solid #999;
+	}
+	
+	.logBox li.tag{
+		width:80px;
+
+	}
+	
+	.logBox li.inputBox{
+		width:200px;
+	}
+	
+	.logBox li.button{
+		width:200px;
+	}
+	html body{
+		height:100%;
+		margin:0;
+		padding:0;
+	}
+	
+	#header {
+		background-color:black;
+		color:white;
+		text-align:center;
+		padding:5px;
+	}
+	
+	#nav {
+		background-color:grey;
+		width:100px;
+		height:1000px;
+		top:100px;
+		bottom:25px;
+		float:left;
+		padding:5px;
+	}
+	
+	#nav li {
+		list-style:none;
+	}
+	
+	#section {
+		width:350px;
+		float:left;
+		padding:10px;
+	}
+	
+	#footer {
+		background-color:black;
+		color:white;
+		clear:both;
+		text-align:center;
+		padding:5px;
+	}
+	
+	
+		
+		

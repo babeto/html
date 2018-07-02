@@ -1,25 +1,21 @@
 @CHARSET "UTF-8";
 
 
-
-
-
 h1 {
-	text-align:center; 
-	color:green; 
+	text-align:center;
 	font-size:32px;
 }
 
 
 h2 {
         text-align:center;
-        color:green;
         font-size:24px;
+        font-family: KaiTi;
 }
 
 
 p  {
-	font-family: "sans erif";
+	font-family: Georgia;
 }
 
 table {
@@ -27,12 +23,13 @@ table {
 }
 
 body {
-	background-color: #EBC79E;
+	/*background-color: #EBC79E;*/
+	background-color: #EEEEEE;
 }
 
-div {
-	margin: 0 auto;
-}
+	div {
+		margin: 0 auto;
+	}
 
 	p {
 		text-indent:5em;
@@ -46,19 +43,29 @@ div {
 	}
 	
 	.logBox {
-		width:356px;
+		width:360px;
 	}
 	
 	.logBox li {
 		list-style:none;
 		float:left;
-		width:200px;
-		height:32px;
-		/*border:1px solid #999;*/
+		height:36px;
+		line-height:36px;
+		text-align:center;
+		border:1px solid #999;
 	}
-	.logBox li.liName{
+	
+	.logBox li.tag{
 		width:80px;
-		height:32px;
+
+	}
+	
+	.logBox li.inputBox{
+		width:200px;
+	}
+	
+	.logBox li.button{
+		width:200px;
 	}
 		
 	#header {
@@ -91,5 +98,4 @@ div {
 	}
 	
 	
-		
 		

@@ -14,31 +14,32 @@
 管理员登录
 </h1>
 
-<div class="logBox">
+
 <form name="loginform" action="./adminSession.php" method="Post">
+<div class="logBox">
 <ul>
-	<li class="liName">用户名:</li>
-	<li>
+	<li class="tag">用户名:</li>
+	<li class="inputBox">
 		<input name="txtUserName" type="text" id="txtUserName" value=""/>
 	</li>
 
-	<li class="liName">密码:</li>
-	<li>
+	<li class="tag">密码:</li>
+	<li class="inputBox">
 		<input name="txtUserPass" type="text" id="txtUserPass" value=""/>
 	</li>
-	<li class="liName"></li>
-	<li>
-		<input name="submit" type="submit" id="submit" value="提交"/>
+	<li class="tag"></li>
+	<li class="button">
+		<input name="submit" type="submit" id="submit" value="登录"/>
 		<input name="reset" type="reset" id="reset" value="重置"/>
 	</li>
 
 </ul>
-
+</div>
 
 
 
 </form>
-</div>
+
 
 
 </body>
