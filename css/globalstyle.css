@@ -1,24 +1,26 @@
 @CHARSET "UTF-8";
 
-h2 {
-        text-align:center;
-        font-size:24px;
+	h1 {
         font-family: KaiTi;
-}
+	}
 
+	h2 {
 
-p  {
-	font-family: Georgia;
-}
+        font-family: KaiTi;
+	}
 
-table {
-	margin: 1em auto; 
-}
+	p  {
+		font-family: Georgia;
+	}
 
-body {
-	/*background-color: #EBC79E;*/
-	background-color: #EEEEEE;
-}
+	table {
+		margin: 1em auto; 
+	}
+
+	body {
+		/*background-color: #EBC79E;*/
+		background-color: #EEEEEE;
+	}
 
 	div {
 		margin: 0 auto;
@@ -50,7 +52,6 @@ body {
 	
 	.logBox li.tag{
 		width:80px;
-
 	}
 	
 	.logBox li.inputBox{
@@ -60,6 +61,7 @@ body {
 	.logBox li.button{
 		width:200px;
 	}
+	
 	html body{
 		height:100%;
 		margin:0;
@@ -76,15 +78,36 @@ body {
 	#nav {
 		background-color:grey;
 		width:100px;
-		height:1000px;
-		top:100px;
-		bottom:25px;
+		height:600px;
 		float:left;
 		padding:5px;
 	}
 	
 	#nav li {
 		list-style:none;
+	}
+	
+	#nav li a {
+		font-family:KaiTi;
+		font-size:20px;
+		line-height:30px;
+	}
+	
+	#nav li a:link {
+		text-decoration:none;
+		color:black;
+	}
+	
+	#nav li a:visited{
+		color:#black;
+	}
+	
+	#nav li a:hover{
+		color:#eeeeee;
+	}
+	
+	#nav li a:active{
+		color:#eeeeee;
 	}
 	
 	#section {
@@ -102,5 +125,5 @@ body {
 	}
 	
 	
-		
-		
+	
+	

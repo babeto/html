@@ -2,11 +2,17 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/globalstyle.css"/>
-<title>幻游城</title>
+<title>乐游城</title>
 </head>
 
 <body>
+
+<div id="header">
+
 <h2>文章</h2>
+
+</div>
+
 
 <?php 
 	
