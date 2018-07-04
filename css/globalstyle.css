@@ -30,12 +30,66 @@
 		text-indent:5em;
 	}
 	
-	.text {
-		background-color:black;
-		color:white;
+	li {
+		list-style:none;
+	}
+	
+	li.pageUpDown {
+		display:inline
+	}
+	
+	.main {
+		background-color:#eeeeee;
+		text-align:center;
 		padding: 5px;
 		font-family: san-serif;
 	}
+	
+	.text {
+		background-color:#eeeeee;
+		text-align:center;
+		padding: 5px;
+		font-family: san-serif;
+	}
+	
+	.article {
+		background-color:#eeeeee;
+		text-align:center;
+		padding: 5px;
+		font-family: san-serif;
+	}
+	.article li{
+		list-style:none;
+	}
+	
+	.article li.title{
+		background-color:white;
+		color:black;
+		}
+	.article li.detail{
+		background-color:white;
+		color:black;
+		}
+	.article li.date{
+		background-color:white;
+		color:black;
+		}
+	.articlelist {
+		background-color:#eeeeee;
+		text-align:center;
+		padding: 5px;
+		font-family: san-serif;
+	}
+	
+	.articlelist li{
+		list-style:none;
+	}
+	
+	
+	.articlelist li.pageUpDown{
+		color:black;
+		display:inline;
+		}
 	
 	.logBox {
 		width:360px;

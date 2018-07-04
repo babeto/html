@@ -8,10 +8,12 @@
 </head>
 
 <body>
-
-<h1>
+<div id="header">
+<h2>
 登录/注册
-</h1>
+</h2>
+
+</div>
 
 <form name="loginform" action="admin/logSession.php" method="Post">
 	<table>
@@ -24,7 +26,7 @@
 	<tr>
 		<td>密码</td>
 		<td><label>
-			<input name="txtUserPass" type="text" id="txtUserPass" value=""/>
+			<input name="txtUserPass" type="password" id="txtUserPass" value=""/>
 		</label></td>
 	</tr>
 	<tr>

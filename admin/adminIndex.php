@@ -2,11 +2,14 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/globalstyle.css"/>
-<title>幻游城</title>
+<title>正</title>
 </head>
 
 <body>
+<div id="header">
 <h2>管理</h2>
+</div>
+
 
 <table>
 <tr> 

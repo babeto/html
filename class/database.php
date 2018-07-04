@@ -34,7 +34,7 @@ public	 $con;
 	function createDatabase()
 	{
 	
-		$sql="CREATE DATABASE magic_data";
+		$sql="CREATE DATABASE IF NOT EXISTS magic_data COLLATE ";
 		echo $sql;
 		if(mysql_query($sql,$this->con))
 		{
@@ -88,13 +88,12 @@ public	 $con;
 			echo "Admins table created failed".mysql_error();
 			return false;
 		}
-
 	}
 	
 	function createUsersTable(){
 		$sql="CREATE TABLE Users
 		(
-		ID int NOT NULL AUTO INCREMENT,
+		ID  int NOT NULL AUTO_INCREMENT,
 		UserName varchar(255) NOT NULL,
 		UserPass varchar(255) NOT NULL,
 		IsDisable int,
@@ -113,17 +112,19 @@ public	 $con;
 	function createDownloadTable(){
 		$sql ="CREATE TABLE Download
 		(
-		ID int NOT NULL AUTO INCREMENT,
+		ID  int NOT NULL AUTO_INCREMENT,
 		ResourceName varchar(255) NOT NULL,
 		ResourceSize int,
-		DownloadLink varchar(255) NOT NULL
+		DownloadLink1 varchar(255),
+		DownloadLink2 varchar(255),
+		PRIMARY KEY(ID)
 		)";
 		if(mysql_query($sql,$this->con)){
 			echo "Download Table created";
 			return true;
 		}
 		else{
-			echo "Download Table create failed".mysql_error(0);
+			echo "Download Table create failed".mysql_error();
 			return false;
 		}
 	}

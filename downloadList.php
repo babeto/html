@@ -9,20 +9,22 @@
 
 <div id="header">
 
-<h2>文章</h2>
+<h2>下载</h2>
 
 </div>
 
-<div class="articlelist">
+<div class="main">
 
 <?php
-	
-	include('./class/articles.php');
+
+	include('./class/download.php');
 	
 	$page=$_GET['Page'];
-	$articles = new articles();
+	$download = new download();
+	#$download->createDownloadTable();
+	#$download->insertDownload();
 	$pageSize=6;
-	$recordCount=$articles->getRecordCount();
+	$recordCount=$download->getRecordCount();
 	if($recordCount%$pageSize){
 		$pageCount=(int)($recordCount/$pageSize)+1;
 	}
@@ -37,14 +39,18 @@
 		$page=$pageCount;
 	}
 
-	$results=$articles->getArticleListByPage($page, $pageSize);
+	$results=$download->getDownloadListByPage($page, $pageSize);
 	#$articles->listArticles($page);
 ?>
 
 <ul>
-<?php while($row=mysql_fetch_array($results)) { ?>
-<li><a href="./viewArticle.php?ArticleID=<?php echo $row['ID']; ?>"> <?php echo $row['Title']; ?> </a> </li>
-<?php } ?>
+<?php if($recordCount==0){ ?>
+<li>No download resource found</li>
+
+<?php } else{
+  while($row=mysql_fetch_array($results)) { ?>
+<li><a href="./viewDownload.php?DownloadID=<?php echo $row['ID']; ?>"> <?php echo $row['ResourceName']; ?> </a> </li>
+<?php } }?>
 
 </ul>
 
@@ -55,7 +61,7 @@
 		echo "首页";
 	}
 	else{
-		echo ("<a href=listArticles.php?Page=1>首页</a>");
+		echo ("<a href=downloadList.php?Page=1>首页</a>");
 	}
 ?>
 </li>
@@ -65,7 +71,7 @@
 		echo "上页";
 	}
 	else{
-		echo ("<a href=listArticles.php?Page=".($page-1).">上页</a>");
+		echo ("<a href=downloadList.php?Page=".($page-1).">上页</a>");
 	}
 ?>
 </li>
@@ -76,7 +82,7 @@
 		echo "下页";
 	}
 	else{
-		echo ("<a href=listArticles.php?Page=".($page+1).">下页</a>");
+		echo ("<a href=downloadList.php?Page=".($page+1).">下页</a>");
 	}
 ?>
 </li>
@@ -87,7 +93,7 @@
 		echo "末页";
 	}
 	else{
-		echo ("<a href=listArticles.php?Page=".$pageCount.">末页</a>");
+		echo ("<a href=downloadList.php?Page=".$pageCount.">末页</a>");
 	}
 ?>
 </li>
