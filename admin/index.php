@@ -15,7 +15,7 @@
 
 	<frameset cols="20%,80%">
 		<frame name="contents" src="left.php" scrolling="auto" frameborder="1">
-		<frame name="right" src="../listArticles.php" scrolling="auto" frameborder="1">	
+		<frame name="right" src="articlesAdmin.php" scrolling="auto" frameborder="1">	
 
 		<noframes>
 		<body>

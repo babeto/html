@@ -42,6 +42,7 @@ class article extends database {
 	
 }
 
-
+        text-align:center;
+        font-size:24px;
 
 -->

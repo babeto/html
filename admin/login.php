@@ -10,10 +10,11 @@
 
 <body>
 
-<h1>
-管理员登录
-</h1>
-
+<div id="header">
+<h2>
+管理
+</h2>
+</div>
 
 <form name="loginform" action="./adminSession.php" method="Post">
 <div class="logBox">

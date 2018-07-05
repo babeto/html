@@ -1,61 +1,46 @@
-
 <?php
 
-include 'dataOpt.php';
+include_once ('database.php');
 
-class articles {
+class articles extends database  {
 
-public   $host = "localhost";
-private  $adminUser = "siteadmin";
-private  $adminPassword = "User@123";
-public   $database = "magic_data";
-public	 $con;
+	public $ArticleID;
+	public $ArticleTitle;
+	public $ArticleAuthor;
+	public $ArticleContent;
+	public $ArticleDatetime;
 
-function __construct()
-{
-	$this->con = mysql_connect("$this->host","$this->adminUser","$this->adminPassword");
-	if(!$this->con)
+	function insertArticle()
 	{
-        	die('could not connect:'. mysql_error());
+		$now=date("y-m-d h:i:sa");
+		$sql="INSERT INTO Articles (Title, Author, Content, Datetime)
+		VALUES
+		('".$this->ArticleTitle."','".$this->ArticleAuthor."','".$this->ArticleContent."','".$now."')";
+		echo $sql;
+		if(mysql_query($sql,$this->con))
+		{
+			echo "item added";
+			return true;
+		}
+		else
+		{
+			echo "error adding item:".mysql_error();
+			return false;
+		}
 	}
-	else
+	
+	function deleteArticle()
 	{
-		echo("connect succeed </br>");
-		mysql_select_db($this->database, $this->con);
+		$sql="DELETE FROM Articles WHERE ID=".$this->ArticleID;
+		if(!mysql_query($sql,$this-con)){
+			echo ("failed del article:".mysql_error());
+			return false;
+		}
+		else {
+			echo ("del article succed!");
+			return true;
+		}
 	}
-}
-
-function __destruct()
-{
-
-	mysql_close($this->con);
-
-}
-
-
-function insertArticle()
-{
-	$now=date("y-m-d h:i:sa");
-
-
-	echo "$now";
-
-	$sql="INSERT INTO Articles (Title, Author, Content, Datetime)
-	VALUES
-	('凉州词','王之焕','黄河远上白云间，一片孤城万仞山。
-	羌笛何须怨杨柳，春风不度玉门关。', '$now')";
-
-
-
-	if(mysql_query($sql,$this->con))
-	{
-	echo "item added";
-	}
-	else
-	{
-	echo "error adding item:".mysql_error();
-	}
-}
 
 function getArticles()
 {
@@ -154,7 +139,6 @@ function listArticles($page){
 			echo "error getting count!".mysql_error();
 			return -1;
 		}
-		
 	}
 	
 	function getArticleListByPage($page,$pageSize){
@@ -176,11 +160,33 @@ function listArticles($page){
 				die("Article query failed:".mysql_error());
 		}
 	}
+	
+	function updateArticleByID($articleID,$title,$content){
+		$sql="UPDATE Articles
+		SET Title='".$title."',Content='".$content."' WHERE ID=".$articleID;
+		if(!mysql_query($sql,$this->con)){
+			echo ("update article failed:".mysql_error());
+			return false;
+		}
+		else{
+			echo ("update article succeed!");
+			return true;
+		}
+	}
+	
+	function delArticleByID($articleID){
+		$sql="DELETE FROM Articles WHERE ID=".$articleID;
+		echo $sql;
+		if(!mysql_query($sql,$this->con)){
+			echo("delete article failed:".mysql_error());
+			return false;
+		}
+		else{
+			echo ("delete article succeed");
+			return true;
+		}
+	}
 }
-
-
-
-
 
 
 ?>

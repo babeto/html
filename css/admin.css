@@ -1,47 +1,98 @@
 @CHARSET "UTF-8";
 
+	html body{
+		height:100%;
+		margin:0;
+		padding:0;
+	}
+	
+	body {
+		/*background-color: #EBC79E;*/
+		background-color: #EEEEEE;
+	}
 
-h1 {
-	text-align:center;
-	font-size:32px;
-}
+	h1 {
+		text-align:center;
+		font-size:32px;
+	}
 
 
-h2 {
-        text-align:center;
-        font-size:24px;
+	h2 {
+
         font-family: KaiTi;
-}
+	}
 
 
-p  {
-	font-family: Georgia;
-}
+	p  {
+		text-indent:5em;
+		font-family: Georgia;
+	}
 
-table {
-	margin: 1em auto; 
-}
-
-body {
-	/*background-color: #EBC79E;*/
-	background-color: #EEEEEE;
-}
-
+	table {
+		margin: 1em auto; 
+	}
+	
 	div {
 		margin: 0 auto;
 	}
-
-	p {
-		text-indent:5em;
-	}
 	
+	ul li {
+		list-style:none;
+	}
+
 	.text {
 		background-color:black;
 		color:white;
 		padding: 5px;
 		font-family: san-serif;
 	}
+	.article {
+		background-color:#eeeeee;
+		text-align:center;
+		padding: 5px;
+		font-family: san-serif;
+	}
 	
+	.article li{
+		list-style:none;
+	}
+	
+	.article li.title{
+		background-color:white;
+		color:black;
+		}
+	.article li.detail{
+		background-color:white;
+		color:black;
+		}
+	.article li.date{
+		background-color:white;
+		color:black;
+		}
+
+	.articlelist {
+		background-color:#eeeeee;
+		padding:5px;
+		text-align:center;
+		font-family: san-serif;
+	}
+	
+	.articlelist li{
+		list-style:none;
+		display: inline;
+	}
+	.articlelist li.left{
+		text-indent:2em;
+		text-align:left；
+	}
+	.articlelist li.article{
+		width:240px;
+	}
+	
+	.articlelist li.pageUpDown{
+		color:black;
+		display:inline;
+		}
 	.logBox {
 		width:360px;
 	}
@@ -67,6 +118,23 @@ body {
 	.logBox li.button{
 		width:200px;
 	}
+	
+	
+	.edit li.tag {
+	
+	}
+	.edit li.inputBox {
+	}
+	
+	input[type="text"]
+	{
+		width:160px;
+	}
+	input[type="password"]
+	{
+		width:160px;
+	}	
+	
 		
 	#header {
 		background-color:black;
@@ -74,6 +142,7 @@ body {
 		text-align:center;
 		padding:5px;
 	}
+	
 	
 	#nav {
 		background-color:grey;
@@ -97,5 +166,3 @@ body {
 		padding:5px;
 	}
 	
-	
-		

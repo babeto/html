@@ -1,6 +1,6 @@
 <?php
 
-include ('../dataOpt.php');
+include_once ('database.php');
 
 class Admin extends database {
 	Private $adminName;
