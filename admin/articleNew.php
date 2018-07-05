@@ -21,7 +21,7 @@ function ChkFields(){
 			window.alert("请输入标题!");
 			return false;
 	}
-	if(document.editForm.txtContent.value==""){
+	if(document.getElementById('txtContent').value.length==0){
 			window.alert("请输入内容");
 			return false;
 	}
@@ -38,13 +38,13 @@ function ChkFields(){
 <ul>
 <li class="tag">标题</li>
 <li class="inputBox"> 
-<input name="txtTitle" type="text" id="txtTitle" value="">
+<input name="txtTitle" type="text" id="txtTitle" style="behavior:url(#default#savehistory);" value="">
 </li>
 </ul>
 <ul>
 <li class="tag">内容</li>
 <li class="inputBox">
-<textarea name="txtContent" cols="50" rows="10" >
+<textarea name="txtContent" id="txtContent" cols="50" rows="10" >
 
 </textarea>
 </li>
