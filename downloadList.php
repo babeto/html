@@ -7,11 +7,7 @@
 
 <body>
 
-<div id="header">
-
 <h2>下载</h2>
-
-</div>
 
 <div class="main">
 

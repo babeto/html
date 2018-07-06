@@ -8,12 +8,9 @@
 </head>
 
 <body>
-<div id="header">
-<h2>
-登录/注册
-</h2>
 
-</div>
+<h2>登录/注册</h2>
+
 
 <form name="loginform" action="admin/logSession.php" method="Post">
 	<table>

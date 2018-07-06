@@ -7,11 +7,7 @@
 
 <body>
 
-<div id="header">
-
 <h2>文章</h2>
-
-</div>
 
 <div class="articlelist">
 

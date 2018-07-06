@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../css/globalstyle.css"/>
+<link rel="stylesheet" type="text/css" href="../css/admin.css"/>
 <title> 幻游山</title>
 </head>
 
@@ -17,10 +17,8 @@
 <?php
 
 include ('../class/articles.php');
-echo 2;
 $articleID=$_GET['ArticleID'];
 
-echo $articleID;
 $articles = new articles();
 
 $result=$articles->getArticleByID($articleID);
@@ -28,7 +26,7 @@ while($article=mysql_fetch_array($result)){
 ?>
 <ul>
 <li class="title"><?php echo $article['Title']?></li>
-<li class="detail"><?php echo $article['Content']?></li>
+<li class="detail"><pre><?php echo $article['Content']?> </pre></li>
 <li class="date"><?php echo $article['Datetime']?></li>
 </ul>
 <?php } ?>

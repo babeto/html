@@ -58,15 +58,15 @@
 	}
 	
 	.article li.title{
-		background-color:white;
+		background-color:#eeeeee;
 		color:black;
 		}
 	.article li.detail{
-		background-color:white;
+		background-color:#eeeeee;
 		color:black;
 		}
 	.article li.date{
-		background-color:white;
+		background-color:#eeeeee;
 		color:black;
 		}
 
@@ -93,6 +93,31 @@
 		color:black;
 		display:inline;
 		}
+		
+	.adminlist {
+		background-color:#eeeeee;
+		padding:5px;
+		text-align:center;
+		font-family: san-serif;
+	}
+	
+	.adminlist li{
+		list-style:none;
+		display: inline;
+	}
+	.adminlist li.left{
+		text-indent:2em;
+		text-align:left；
+	}
+	.adminlist li.admin{
+		width:240px;
+	}
+	
+	.adminlist li.pageUpDown{
+		color:black;
+		display:inline;
+	}
+	
 	.logBox {
 		width:360px;
 	}
