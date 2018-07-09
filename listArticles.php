@@ -26,7 +26,7 @@
 		$pageCount=$recordCount/$pageSize;
 	}
 
-	if($page==null||$page<=0){ 
+	if($page==null||$page<=0){
 		$page=1;
 	}
 	else if($page>$pageCount) {

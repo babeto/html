@@ -3,25 +3,9 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/admin.css"/>
 <title>正</title>
-</head>
 
-<body>
 
-<div id="header">
-
-<h2>文章</h2>
-
-</div>
-<div>
-<ul>
-<li class="nostyle">
-<input name="btnadd" type="button" id="btnadd" value="添加文章" onclick="newWindow('articleNew.php')" />
-</li>
-</ul>
-</div>
-<div class="articlelist">
-
-<script Language="JavaScript">
+<script type="text/javascript">
 
 	function newWindow($url){
 		window.open($url);
@@ -36,6 +20,23 @@
 </script>
 
 
+</head>
+
+<body>
+
+<div id="header">
+
+<h2>文章</h2>
+
+</div>
+<div>
+<ul>
+<li class="nostyle">
+<input name="btnadd" type="button" id="btnadd" value="发布文章" onclick="newWindow('articleNew.php')" />
+</li>
+</ul>
+</div>
+<div class="articlelist">
 
 <?php
 	
@@ -65,7 +66,7 @@
 
 <?php while($row=mysql_fetch_array($results)) { ?>
 <ul>
-<li class="article"><a href="./viewArticle.php?ArticleID=<?php echo $row['ID']; ?>"> <?php echo $row['Title']; ?> </a> </li>
+<li class="article"><a href="./articleView.php?ArticleID=<?php echo $row['ID']; ?>"> <?php echo $row['Title']; ?> </a> </li>
 
 <li><a href=# onClick="newWindow('articleEdit.php?ArticleID=<?php echo $row['ID']; ?>')">修改</a></li>
 

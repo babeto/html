@@ -15,11 +15,15 @@
 </tr>
 
 <tr>
-<td><a href="../listArticles.php" target="right">文章管理</a></td>
+<td><a href="articlesAdmin.php" target="right">文章管理</a></td>
 </tr>
 
 <tr>
-<td><a href="../login.php" target="right">登录</a></td>
+<td><a href="login.php" target="right">登录</a></td>
+</tr>
+
+<tr>
+<td><a href="initSite.php" target="right">初始化</a></td>
 </tr>
 
 <tr>

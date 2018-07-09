@@ -18,9 +18,9 @@ public	 $con;
 		}
 		else
 		{
-			echo("connect succeed </br>");
+			#echo("connect succeed </br>");
 		    mysql_select_db($this->database, $this->con);
-			echo("select DB succeed </br>");
+			#echo("select DB succeed </br>");
 		}
 	}
 

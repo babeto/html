@@ -1,66 +1,76 @@
 <?php
 
-include ('../dataOpt.php');
+include_once ('database.php');
 
-class User extends database {
+class Admin extends database {
 	Private $userName;
 	Private $userPass;
 	function HaveUser(){
 			
-		$sql="SELECT COUNT(*) FROM Users WHERE UserName=".$this->userName."AND UserPassword=".$this->userPass;
+		$sql="SELECT COUNT(*) FROM Users WHERE UserName='".$this->userName."' AND UserPassword='".$this->userPass."'";
+		echo $sql;
 		$result=mysql_query($sql,$this->con);
 		if($row=mysql_fetch_array($result)){
-			echo "User exists!";
-			return true;
+				if($row[0]!=0){
+					echo "user exists";
+					return true;					
+				}
+				else {
+					echo "user not exists";
+					return false;
+				}
+				
 		}
 		else{
-			echo "User doesn't exists!";
+			echo "user doesn't exist!";
 			return false;
 		}
 			
 	}
 	
 	function setUserName($username){
-		$this->userName=$username;
+		$this->adminName=$adminname;
 	}
 	
 	function setPass($userpass){
 		$this->userPass=$userpass;
 	}
 	
-	function createUsersTable(){
+	function createAdminsTable(){
+		$sql="CREATE TABLE Users
+		(
+		ID  int NOT NULL AUTO_INCREMENT,
+	 	UserName varchar(255) NOT NULL,
+	 	UserPassword varchar(255) NOT NULL,
+	 	PRIMARY KEY(ID)
+	 	)";
+		if(mysql_query($sql,$this->con)){
+			echo "Users table created";
+			return true;
+		}
+		else{
+			echo "Users table created failed".mysql_error();
+			return false;
+		}
+	
+	}
+	function addUser($userName,$userPass){
 		
-	}
-	
-}
-
-
-function createArticleTable()
-{
-	
-	$sql = "CREATE TABLE Articles
-	(
-	 ID  int NOT NULL AUTO_INCREMENT,
-	 Title varchar(255) NOT NULL,
-	 Author varchar(255),
-	 Content  text,
-	 Datetime datetime,
-	 PRIMARY KEY(ID)
-	)";
-
-
-	if(mysql_query($sql,$this->con))
-	{
-		echo "table created";
+		$sql="INSERT INTO Users (UserName, UserPassword) VALUES ('$userName','$userPass')";
+		echo $sql;
+		if(mysql_query($sql, $this->con)){
+			echo "user added";
+			return true;
+		}
+		else{
+			echo "user added failed".mysql_error();
+			return false;
+		}
 	}
 
-	else
-	{
-		echo "error creating table: ".mysql_error();
-	}
+
 
 }
-
 
 
 ?>

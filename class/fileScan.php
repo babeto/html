@@ -1,27 +1,103 @@
 <?php
 
-function getFiles($path){
 
-	$dir=dir($path);
-	$files=array();
-	while($entry=$dir->read()){
-		if(is_dir($entry))
-		{
-			if($entry)
-			$files=getFiles($entry);
+class folder {
+
+	public $folderPath;
+	public $allFilesfullPath=array();
+	public $allFilesName=array();
+	public $allFilesWithoutExt=array();
+	
+	function getFiles($path){
+		$dir=scandir($path);
+		$dir_nodot=array_slice($dir,2);
+		$files=array();
+		$temp=array();
+		foreach($dir_nodot as $key => $entry){
+	
+			if(is_dir($path.DIRECTORY_SEPARATOR.$entry))
+			{
+				$temp=$this->getFiles($path.DIRECTORY_SEPARATOR.$entry);
+				foreach($temp as $value){
+					$files[]=$value;
+				}
+			}
+			else{
+				$files[]=$path.DIRECTORY_SEPARATOR.$entry;
+			}
 		}
-		else {
-			$files[]=$entry;
-		}
+		
+		
+		return $files;
+		
+	}
+	
+	function __Construct($path){
+		$this->folderPath=$path;
 
 	}
 	
-	$dir->close();
-	return files;
+	function getFilesFullPath(){
+		$this->allFilesfullPath = $this->getFiles($this->folderPath);
+		return $this->allFilesfullPath;
+	}
+	
+	function getFilesName()
+	{
+		if(count($this->allFilesfullPath)!=0){
+			foreach($this->allFilesfullPath as $filePath){
+				$this->allFilesName[]=array_pop(explode("/",$filePath));
+
+			}
+		}
+		else{
+			$this->allFilesfullPath=$this->getFiles($this->folderPath);
+			foreach($this->allFilesfullPath as $filePath){
+				$this->allFilesName[]=array_pop(explode("/",$filePath));
+			}
+		}	
+		
+		return $this->allFilesName;
+	}
+
+	function getFilesWithoutExt(){
+		if(count($this->allFilesName)!=0){
+			foreach($this->allFilesName as $fileName){
+				$fileNameArray=array();
+				$fileNameArray=explode(".",$fileName);
+				$this->allFilesWithoutExt[]=$fileNameArray[0];
+			}
+		}
+		else{
+			$this->allFilesName=$this->getFilesName();
+			foreach($this->allFilesName as $fileName){
+				$fileNameArray=array();
+				$fileNameArray=explode(".",$fileName);
+				$this->allFilesWithoutExt[]=$fileNameArray[0];
+			}
+		}	
+		
+		return $this->allFilesWithoutExt;
+	
+	}
+
 }
 
-echo hello;
-echo $file=getFiles('/var/www/html/down');
-echo how;
+$folder = new folder("../down");
+$files=array();
+$filesname=array();
+$files=$folder->getFilesFullPath();
+$filesname=$folder->getFilesName();
+$fileswithoutext=$folder->getFilesWithoutExt();
+
+foreach ($files as $value){
+echo $value."</br>";}
+
+foreach ($filesname as $value){
+echo $value."</br>";}
+
+foreach ($fileswithoutext as $value){
+echo $value."</br>";}
+
 
 ?>
