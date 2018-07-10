@@ -1,5 +1,7 @@
 <?php
 
+
+
 class database {
 
 public   $host = "localhost";

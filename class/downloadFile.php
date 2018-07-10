@@ -1,5 +1,6 @@
 <?php 
 
+
 class downloadFile {
 	
 	public $fileID;
@@ -9,10 +10,13 @@ class downloadFile {
 	public $fileFullPath2;
 
 	function __construct($fileFullPath){
+		
 		$this->fileFullPath=$fileFullPath;
+		
 		$fileFullPathArray=explode("/", $fileFullPath);
+		
 		$this->fileName=array_pop($fileFullPathArray);
-		if(var_dump(strrpos($this->fileName,'.'))!=false){
+		if(strrpos($this->fileName,'.')!=false){
 			$this->fileWithoutExt=substr($this->fileName,0,strrpos($this->fileName,'.'));
 		}
 		else{

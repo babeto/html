@@ -5,6 +5,8 @@ include_once ('./downloadFile.php');
 
 class downloadFileScan {
 	
+	public $serverProtocol;
+	
 	public $serverPath;
 	
 	public $currentPage;
@@ -15,7 +17,7 @@ class downloadFileScan {
 	
 	public $files=array();
 	
-function __construct($downFolder,$serverPath,$currentPage){
+function __construct($downFolder,$currentPage,$serverPath,$serverProtocol){
 	if($serverPath!=""){
 		$this->serverPath=$serverPath;
 	}
@@ -27,6 +29,12 @@ function __construct($downFolder,$serverPath,$currentPage){
 	}
 	else{
 		$this->currentPage=$_SERVER['PHP_SELF'];
+	}
+	if($serverProtocol!=""){
+		$this->serverProtocol=$serverProtocol;
+	}
+	else{
+		$this->serverProtocol="http://";
 	}
 	$this->downFolder=$downFolder;
 }
@@ -109,10 +117,8 @@ function getDownloadFileInfo(){
 
 	}
 	
-
 	
 	$this->folder=new folder($relativePath);
-	
 	
 	
 	$folder=$this->folder;
@@ -120,6 +126,7 @@ function getDownloadFileInfo(){
 	$filesPath=array();
 	
 	$filesPath=$folder->getFilesFullPath();
+	
 	
 	# 得到符合正则表达式格式字符串，截取相对路径之后内容
 	$relativePathCharRegArray=array();
@@ -140,7 +147,7 @@ function getDownloadFileInfo(){
 	$fileAbsolutePath=array();
 	foreach ($filesPath as $value) {
 		preg_match("/$relativePathCharReg(?<right>.*)/",$value, $matches);
-		$fileAbsolutePath[]=$serverPath.DIRECTORY_SEPARATOR.$downFolder.DIRECTORY_SEPARATOR.$matches[1];
+		$fileAbsolutePath[]="http://".$serverPath.DIRECTORY_SEPARATOR.$downFolder.DIRECTORY_SEPARATOR.$matches[1];
 	}
 	
 	foreach($fileAbsolutePath as $value){
@@ -148,6 +155,7 @@ function getDownloadFileInfo(){
 		$this->files[]=$file;
 		#echo $value;
 	}
+	
 	return $this->files;
 	
 }
