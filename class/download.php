@@ -1,8 +1,16 @@
 <?php
 
-include ('database.php');
+include_once ('./database.php');
+include_once ('./downloadFile.php');
 
 class download extends database{
+	
+	public $file;
+	public $files=array();
+	
+	function updateDownloadInfo($files){
+		
+	}
 	
 	function getDownloadListByPage($page,$pageSize){
 		$sql="SELECT * FROM Download LIMIT ".($page-1)*$pageSize.",".$pageSize;

@@ -2,12 +2,15 @@
 
 include_once ('../../class/downloadFileScan.php');
 include_once ('../../class/folderScan.php');
-
+include_once ('../../class/downloadFile.php');
 
 $download=new downloadFileScan("admin/down");
-$filePath=$download->getDownloadInfo();
-$fileName=$download->filesName;
 
+$files=$download->getDownloadFileInfo();
+
+foreach($files as $value){
+	$value->showFile();
+}
 
 
 ?>

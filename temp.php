@@ -44,5 +44,80 @@ class article extends database {
 
         text-align:center;
         font-size:24px;
+        
+        
+        i=pop(a);
+        if(i==null)
+        { 
+        	if(j=pop(b)!=null) {( s+=1;}
+        	else ( $flag=false;}
+        }
+        else
+        {
+        	if(j=pop(b)!=null){
+        	
+        		if(i!=j) {
+        			relative+=i;
+        			s+=1;
+        			}
+        			else {
+        			$flag=false;
+        			}
+        	}
+        	else{
+        			relative+=i;
+        	}
+        }
+        
+        while ($flag){
+	
+	if(($popDown=array_pop($downFolderArray))==null){
+		if(($popPage=array_pop($currentPageArray))!=null){
+			$relativeLevel[]="../";
+		}
+		else{
+			$flag=false;
+		}
+	}
+	else{
+		if(($popPage=array_pop($currentPageArray))!=null){
+			if($popDown!=$popPage){
+				$relativeLevel[]="../";
+				$relativePath[]=$popDown;
+			}
+			else{
+				$flag=false;
+			}
+		}
+		else{
+			$relativePath[]=$popDown;
+		}
+	}
+}
+	
+	while(($temp=array_pop($relativePath))!=null){
+		echo $temp;
+	}
+	while(($temp=array_pop($relativeLevel))!=null){
+		echo $temp;
+	}
+        
+        
+$folder = new folder("../down");
+$files=array();
+$filesname=array();
+$files=$folder->getFilesFullPath();
+$filesname=$folder->getFilesName();
+$fileswithoutext=$folder->getFilesWithoutExt();
+
+foreach ($files as $value){
+echo $value."</br>";}
+
+foreach ($filesname as $value){
+echo $value."</br>";}
+
+foreach ($fileswithoutext as $value){
+echo $value."</br>";}
+        
 
 -->
