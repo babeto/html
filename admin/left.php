@@ -19,6 +19,10 @@
 </tr>
 
 <tr>
+<td><a href="downloadsAdmin.php" target="right">下载管理</a></td>
+</tr>
+
+<tr>
 <td><a href="login.php" target="right">登录</a></td>
 </tr>
 

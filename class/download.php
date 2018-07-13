@@ -7,14 +7,12 @@ include_once ('downloadFile.php');
 class download extends database {
 	
 		function refreshDownloadInfo(){
-			
-			echo fine;
 
 			if(count($this->files)!=0){
 			
 				$sql="DELETE FROM Download";
 				if(mysql_query($sql,$this->con)){
-					echo "delete all download data from table succeed";
+					echo "delete all download data from table succeed </br>";
 				}
 				else {
 					echo "delete download data failed".mysql_error();
@@ -72,7 +70,7 @@ class download extends database {
 				die("insert download data failed:".mysql_error());
 			}
 			else{
-				echo ("download item added");
+				echo ("download item added:".$this->file->fileName." ".$this->file->fileFullPath."</br>");
 			}
 		}
 		

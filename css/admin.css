@@ -89,7 +89,31 @@
 		width:240px;
 	}
 	
-	.articlelist li.pageUpDown{
+	 .articlelist li.pageUpDown{
+		color:black;
+		display:inline;
+		}
+		
+	.downloadlist {
+		background-color:#eeeeee;
+		padding:5px;
+		text-align:center;
+		font-family: san-serif;
+	}
+	
+	.downloadlist li{
+		list-style:none;
+		display: inline;
+	}
+	.downloadlist li.left{
+		text-indent:2em;
+		text-align:left；
+	}
+	.downloadlist li.article{
+		width:240px;
+	}
+	
+	.downloadlist li.pageUpDown{
 		color:black;
 		display:inline;
 		}
